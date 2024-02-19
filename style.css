@@ -1,0 +1,93 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Lilita One", sans-serif;
+  }
+  
+  .video-header {
+    position: relative;
+    overflow: hidden;
+    height: 50vh; /* Adjust height as needed */
+  }
+  
+  #background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    
+  }
+  
+  .header-title {
+    font-size: 3em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 70px;
+    opacity: 75%;
+    -webkit-text-stroke: .15vw white;
+    text-stroke: .15vw white;
+    -webkit-text-fill-color: transparent; /* Fallback for non-webkit browsers */
+    text-fill-color: transparent; /* Fallback for non-webkit browsers */
+  }
+  
+  .header-title span {
+    -webkit-text-fill-color: #b82a2c; /* Fallback for non-webkit browsers */
+    text-fill-color: #b82a2c; /* Fallback for non-webkit browsers */
+    -webkit-text-stroke: .15vw white;
+    text-stroke: .15vw white;
+  }
+  
+  .header-title .gold {
+    -webkit-text-fill-color: #b82a2c;
+    text-fill-color: #b82a2c;
+    -webkit-text-stroke: .15vw white;
+    text-stroke: .15vw white;
+  }
+  
+  .subheader {
+    font-size: 2em;
+    color: white;
+  }
+  
+  .byline {
+    font-size: 1em;
+    color: black;
+    margin-top: 10px;
+    font-weight: 100;
+    font-family: "DM Serif Display", serif;
+  }
+  
+  /* Add media queries for responsiveness */
+  @media (max-width: 768px) {
+    .header-title {
+      font-size: 2em;
+    }
+    .subheader {
+      font-size: 1.5em;
+    }
+  }
+
+/*dogs scrolling*/
+  .dog-image {
+    position: absolute;
+    visibility: hidden; /* Hide images initially */
+    transition: top 2s, left 2s, visibility 0s 2s; /* Delay visibility transition */
+  }
+
+/*body text */
+.body-text {
+    font-family: "Times New Roman", serif;
+    width: 50%; /* This confines the text to the center third of the screen */
+    text-align: left; /* This centers the text within the .body-text element */
+    margin: auto;
+    font-size: 20px;
+    margin-top: 55px;
+}
