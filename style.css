@@ -81,10 +81,10 @@ body, html {
 /*body text */
 .body-text {
   font-family: "Times New Roman", serif;
-  width: 40%; /* This confines the text to the right half of the screen */
+  width: 70%; /* This confines the text to the right half of the screen */
   text-align: left; /* This aligns the text within the .body-text element */
   margin: auto;
-  margin-left: 50%; /* This pushes the text to the right half of the screen */
+  margin-left: 40%; /* This pushes the text to the right half of the screen */
   font-size: 20px;
   margin-top: 2%;
   line-height: 28px; /* This increases the line spacing */
