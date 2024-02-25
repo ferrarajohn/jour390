@@ -1,13 +1,16 @@
 body, html {
+    cursor: url('dogs/paw.svg'), default;
     height: 100%;
     margin: 0;
     font-family: "Lilita One", sans-serif;
   }
-  
+
+
   .video-header {
     position: relative;
     overflow: hidden;
-    height: 50vh; /* Adjust height as needed */
+    height: 100vh; /* Adjust height as needed */
+    width: 100%;
   }
   
   #background-video {
@@ -75,19 +78,54 @@ body, html {
     }
   }
 
-/*dogs scrolling*/
-  .dog-image {
-    position: absolute;
-    visibility: hidden; /* Hide images initially */
-    transition: top 2s, left 2s, visibility 0s 2s; /* Delay visibility transition */
-  }
-
 /*body text */
 .body-text {
-    font-family: "Times New Roman", serif;
-    width: 50%; /* This confines the text to the center third of the screen */
-    text-align: left; /* This centers the text within the .body-text element */
-    margin: auto;
-    font-size: 20px;
-    margin-top: 55px;
+  font-family: "Times New Roman", serif;
+  width: 40%; /* This confines the text to the right half of the screen */
+  text-align: left; /* This aligns the text within the .body-text element */
+  margin: auto;
+  margin-left: 50%; /* This pushes the text to the right half of the screen */
+  font-size: 20px;
+  margin-top: 2%;
+  line-height: 28px; /* This increases the line spacing */
+  overflow-y: scroll; /* This allows the images to scroll if they exceed the height of the screen */
+  scrollbar-width: none; /* This hides the scrollbar */
+  height: 100%;
+}
+
+.body-text::-webkit-scrollbar {
+  display: none; /* This hides the scrollbar for Chrome, Safari and Opera */
+}
+
+.image-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  
+}
+
+.image-container::-webkit-scrollbar {
+  display: none; /* This hides the scrollbar for Chrome, Safari and Opera */
+}
+
+.image-container img {
+  width: 75%;
+  height: auto;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-text, .motion-image-container {
+  flex: 1;
+}
+
+.motion-image-container img {
+  width: 100%;
+  height: auto;
+  margin-bottom: -200px; /* Adjust the space between images */
 }
