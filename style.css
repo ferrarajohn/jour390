@@ -11,48 +11,22 @@ body, html {
     overflow: hidden;
     height: 100vh; /* Adjust height as needed */
     width: 100%;
-  }
-  
-  #background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-color: #539055;
   }
   
   .header-content {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     
   }
-  
-  .header-title {
-    font-size: 3em;
-    text-transform: uppercase;
-    line-height: 1.2;
-    font-size: 70px;
-    opacity: 75%;
-    -webkit-text-stroke: .15vw white;
-    text-stroke: .15vw white;
-    -webkit-text-fill-color: transparent; /* Fallback for non-webkit browsers */
-    text-fill-color: transparent; /* Fallback for non-webkit browsers */
-  }
-  
-  .header-title span {
-    -webkit-text-fill-color: #b82a2c; /* Fallback for non-webkit browsers */
-    text-fill-color: #b82a2c; /* Fallback for non-webkit browsers */
-    -webkit-text-stroke: .15vw white;
-    text-stroke: .15vw white;
-  }
-  
-  .header-title .gold {
-    -webkit-text-fill-color: #b82a2c;
-    text-fill-color: #b82a2c;
-    -webkit-text-stroke: .15vw white;
-    text-stroke: .15vw white;
+
+  .title {
+    font-size: 200px;
+    margin-bottom: -20px;
   }
   
   .subheader {
@@ -60,12 +34,12 @@ body, html {
     color: white;
   }
   
-  .byline {
+  .byline, .date {
     font-size: 1em;
-    color: black;
-    margin-top: 10px;
+    color: white;
     font-weight: 100;
     font-family: "DM Serif Display", serif;
+    padding: 10px;
   }
   
   /* Add media queries for responsiveness */
