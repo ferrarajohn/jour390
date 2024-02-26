@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'doodle4';
+  src: url('fonts/vtks.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'doodle3';
+  src: url('fonts/Brewski.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'doodle2';
+  src: url('fonts/KGAlreadyHome.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'doodle1';
+  src: url('fonts/Riscada.ttf') format('truetype');
+}
+
 body, html {
     cursor: url('dogs/paw.svg'), default;
     height: 100%;
@@ -27,18 +45,21 @@ body, html {
   .title {
     font-size: 200px;
     margin-bottom: -20px;
+    font-family: 'doodle1';
   }
   
   .subheader {
     font-size: 2em;
     color: white;
+    font-family: 'doodle1';
+    padding-top: 25px;
   }
   
   .byline, .date {
     font-size: 1em;
     color: white;
     font-weight: 100;
-    font-family: "DM Serif Display", serif;
+    /* font-family: "DM Serif Display", serif; */
     padding: 10px;
   }
   
@@ -55,15 +76,12 @@ body, html {
 /*body text */
 .body-text {
   font-family: "Times New Roman", serif;
-  width: 70%; /* This confines the text to the right half of the screen */
-  text-align: left; /* This aligns the text within the .body-text element */
-  margin: auto;
-  margin-left: 40%; /* This pushes the text to the right half of the screen */
+  text-align: left;
+  width: 35%; /* Set the width of the .body-text element */
+  margin: 30%; /* Center the .body-text element horizontally */
   font-size: 20px;
   margin-top: 2%;
-  line-height: 28px; /* This increases the line spacing */
-  overflow-y: scroll; /* This allows the images to scroll if they exceed the height of the screen */
-  scrollbar-width: none; /* This hides the scrollbar */
+  line-height: 28px;
   height: 100%;
 }
 
@@ -103,3 +121,204 @@ body, html {
   height: auto;
   margin-bottom: -200px; /* Adjust the space between images */
 }
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+h6 {
+  animation: flash 2s linear infinite;
+}
+
+.head_section1 {
+  font-family: 'doodle4';
+  color: goldenrod;
+  font-size: 68px;
+}
+
+.section1, .section2, .section3 {
+  margin-left: 200px;
+  width: 100%;
+}
+
+.head_section2 {
+  font-family: 'doodle3';
+  color: goldenrod;
+  font-size: 68px;
+  line-height: 70%;
+}
+
+.head_section3 {
+  font-family: 'doodle2';
+  color: goldenrod;
+  font-size: 68px;
+  line-height: 70%;
+}
+
+.image-overlay-container {
+  position: relative;
+  width: max-content; /* Adjust as needed */
+  margin-bottom: 1000px;
+}
+
+.overlay-image {
+  position: absolute;
+  width: 400px; /* Increased width */
+  height: auto;
+}
+
+.first-image {
+  z-index: 1; /* Ensures this image is on top */
+}
+
+.second-image {
+  left: 300px;
+  top: 350px;
+  z-index: 2;
+}
+
+.third-image {
+  left: 100px; /* Adjust as needed */
+  top: 600px;
+  z-index: 3;
+}
+
+
+
+
+/* Optimize body text for mobile */
+@media (max-width: 768px) {
+  .body-text {
+    width: 90%; /* Increase width for smaller screens */
+    margin: 5%; /* Adjust margin to keep the text centered */
+    font-size: 18px; /* Adjust font size for readability */
+  }
+}
+
+/* Optimize image container for mobile */
+@media (max-width: 768px) {
+  .image-container {
+    width: 100%; /* Make image container take full width */
+    top: auto; /* Adjust positioning if necessary */
+    position: relative; /* Change to relative if it overlaps other content */
+  }
+
+  .image-container img {
+    width: 100%; /* Make images responsive */
+  }
+}
+
+/* Adjust content wrapper for mobile */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack flex items vertically on small screens */
+  }
+
+  .body-text, .motion-image-container {
+    flex: none; /* Adjust flex settings for mobile */
+    width: 100%; /* Full width for stacked elements */
+  }
+}
+
+/* Adjust header and subheader for mobile */
+@media (max-width: 768px) {
+  .title {
+    font-size: 150px; /* Reduce font size for the title */
+    margin-bottom: 0; /* Adjust spacing */
+  }
+
+  .subheader {
+    font-size: 50px; /* Adjust subheader font size */
+  }
+}
+
+/* Adjust section headers for mobile */
+@media (max-width: 768px) {
+  .head_section1, .head_section2, .head_section3 {
+    font-size: 76px;
+    width: 100vh;
+  }
+}
+
+/* Adjust image overlay container for mobile */
+@media (max-width: 768px) {
+  .image-overlay-container {
+    margin-bottom: 1200px;
+    margin-top: 100px;
+  }
+
+  .overlay-image {
+    width: 100%; /* Make overlay images responsive */
+  }
+
+  .first-image, .second-image, .third-image {
+    width: 500px; /* Adjust width */
+    display: block; /* Stack images */
+  }
+}
+
+/* Hide scrollbar on mobile for body text and image container */
+@media (max-width: 768px) {
+  .body-text::-webkit-scrollbar, .image-container::-webkit-scrollbar {
+    display: none;
+  }
+  .section1, .section2, .section3 {
+    margin-left: 20px;
+    justify-content: left;
+    width: 80vh;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-header {
+    height: 210vh;
+    width: 100vh; 
+  }
+
+  #nightSkyRectangle, #moonCircle, #runningDog {
+      /* Adjust the positioning and sizing of these elements for mobile */
+      position: relative; /* Change from absolute to relative if needed */
+      width: 100%; /* Full width of the parent element */
+      height: auto; /* Keep aspect ratio */
+      max-height: 100vh; /* Ensure it doesn't exceed viewport height */
+  }
+
+  .header-content h1.title, .header-content h2.subheader {
+      /* Adjust font sizes for mobile */
+      text-align: center; /* Center the text */
+  }
+
+  .byline, .date {
+      /* Adjust the positioning and font size for mobile */
+      position: relative; /* Change from relative to absolute for precise positioning */
+      font-size: 4vw; /* Responsive font size based on viewport width */
+      width: 50%; /* Half width to allow side by side positioning */
+      padding: 1vh 0; /* Add some vertical padding */
+      background-color: transparent; /* Ensure background color doesn't overlap */
+      color: white; /* Adjust text color for visibility */
+  }
+
+  .byline {
+      left: 10px; /* Align the byline to the left */
+      text-align: left; /* Text aligned to the left */
+      top: 96%;
+      font-size: larger;
+  }
+
+  .date {
+      right: 50px; /* Align the date to the right */
+      text-align: right; /* Text aligned to the right */
+  }
+}
+
+@media (max-width: 768px) {
+  .walking-dog {
+    display: none;
+  }
+  .grass {
+    padding: 17px;
+  }
+}
+

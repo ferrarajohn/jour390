@@ -23,30 +23,55 @@ function smoothScrollTo(element, duration) {
     requestAnimationFrame(animation);
   }
   
-  // Event listeners and the movement logic remain the same
-  document.addEventListener('keydown', function(event) {
-    if (event.repeat) { return; } // Prevent multiple keydown events
-    if (event.code === 'ArrowRight') {
-        // Start moving the dog when the right arrow key is held down
-        movement = setInterval(function() {
-            const dog = document.getElementById('runningDog');
-            let currentLeft = parseInt(dog.style.left, 10) || 0;
-            dog.style.left = (currentLeft + 15) + 'px'; // Increase the pixels moved to 10
 
-            // Check if the dog has reached the end of the screen
-            if (window.innerWidth - dog.offsetWidth <= currentLeft) {
-                clearInterval(movement); // Stop the dog's movement
-                // Use the custom smoothScrollTo function to scroll to the .container class element
-                const container = document.querySelector('.container');
-                smoothScrollTo(container, 2000); // Scroll over 2000 milliseconds (2 seconds)
-            }
-        }, 50); // Adjust the interval time as needed for smoother animation
+// Modify the moveDogOnScroll function to enable scrolling when the dog reaches the end
+function moveDogOnScroll() {
+    const dog = document.getElementById('runningDog');
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = window.pageYOffset / maxScroll;
+    
+    // Increase the multiplier to make the dog move farther
+    const maxDogLeft = window.innerWidth * 2; // For example, twice the width of the window
+    const dogLeft = scrollFraction * maxDogLeft;
+  
+    // Keep track of the furthest position the dog has reached
+    const furthestPosition = parseFloat(dog.style.left) || 0;
+  
+    // Update the dog's position only if the new position is greater than the furthest position
+    if (dogLeft > furthestPosition) {
+      dog.style.left = `${Math.min(dogLeft, maxDogLeft)}px`;
     }
-});
+  }
 
-document.addEventListener('keyup', function(event) {
-    if (event.code === 'ArrowRight') {
-        // Stop the dog's movement when the right arrow key is released
-        clearInterval(movement);
-    }
-});
+  window.addEventListener('scroll', moveDogOnScroll);
+
+
+function mapRange(value, a, b, c, d) {
+    value = (value - a) / (b - a);
+    return c + value * (d - c);
+}
+
+// Function to change the color based on the dog's position
+function updateBackground() {
+    const dog = document.getElementById('runningDog');
+    const moonCircle = document.getElementById('moonCircle');
+    const nightSkyRectangle = document.getElementById('nightSkyRectangle');
+    
+    // Get the dog's position relative to the screen width
+    const dogX = dog.getBoundingClientRect().left + dog.clientWidth / 2;
+    const screenWidth = window.innerWidth;
+    const dogPositionRatio = dogX / screenWidth;
+
+    // Map the dog's position to the color range for the moon (goldenrod to moon-like color)
+    const moonColor = `hsl(${mapRange(dogPositionRatio, 0, 1, 42, 0)}, 100%, ${mapRange(dogPositionRatio, 0, 1, 50, 100)}%)`; // HSL values for goldenrod to a moon-like color
+    moonCircle.style.backgroundColor = moonColor;
+
+    // Map the dog's position to the color range for the sky (skyblue to night-like color)
+    const skyColor = `hsl(${mapRange(dogPositionRatio, 0, 1, 197, 240)}, 100%, ${mapRange(dogPositionRatio, 0, 1, 71, 20)}%)`; // HSL values for skyblue to a night-like color
+    nightSkyRectangle.style.backgroundColor = skyColor;
+}
+
+window.addEventListener('scroll', function() {
+    moveDogOnScroll();
+    updateBackground();
+  });
