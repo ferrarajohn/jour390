@@ -75,3 +75,39 @@ window.addEventListener('scroll', function() {
     moveDogOnScroll();
     updateBackground();
   });
+
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const images = document.querySelectorAll('.overlay-image');
+    let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+    // Function to check if the element is near the viewport to start animation
+    function isNearViewport(element, offset) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight + offset && rect.bottom >= -offset
+      );
+    }
+  
+    function handleScroll() {
+      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const directionDown = currentScrollTop > lastScrollTop;
+  
+      images.forEach((image, index) => {
+        // Define the offset for each image based on index
+        // The higher the index, the larger the offset, meaning it will start animating later (require more scrolling)
+        const offset = index * 100; // Adjust this value as needed for your layout
+  
+        if (isNearViewport(image, offset) && directionDown && !image.classList.contains('in-view')) {
+          image.classList.add('in-view');
+        } else if (!isNearViewport(image, window.innerHeight) && !directionDown && image.classList.contains('in-view')) {
+          // If scrolling up and the image is out of view, remove the class
+          image.classList.remove('in-view');
+        }
+      });
+  
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  });

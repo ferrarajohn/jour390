@@ -184,7 +184,24 @@ h6 {
   z-index: 3;
 }
 
+.overlay-image {
+  /* Initial state - positioned off-screen */
+  transform: translateY(100vh);
+  transition: transform 0.5s ease-out; /* Adjust time as needed */
+  will-change: transform;
+}
 
+/* Class to be added on scroll for the animation */
+.in-view {
+  transform: translateY(0); /* Slide up to the original position */
+}
+
+.fixed-in-place {
+  position: fixed;
+  top: 20%; /* Adjust this value to where you want the images to lock in place */
+  left: 50%; /* Center the images */
+  transform: translateX(-50%); /* Adjust horizontal centering based on the width of the images */
+}
 
 
 /* Optimize body text for mobile */
