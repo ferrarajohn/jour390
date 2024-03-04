@@ -24,6 +24,10 @@ body, html {
     font-family: "Lilita One", sans-serif;
   }
 
+  a {
+    color: #7fc97f;
+  }  
+
   .video-header {
     background-image: url('pics/header.JPG');
     background-size: cover;
@@ -441,23 +445,23 @@ h6 {
 
 /* Adjust the positions of the images to match the new requirements */
 .image-column img:nth-child(1) {
-  top: -100px; /* Move higher up */
-  right: 300px; /* Move more to the left */
-  height: 400px;
+  top: -10%; /* Move higher up */
+  right: 10%; /* Move more to the left */
+  max-height: 40vh;
   /* Other styles */
 }
 
 .image-column img:nth-child(2) {
-  top: 400px; /* Move higher up */
-  right: 120px; /* Move more to the left */
-  height: 350px;
+  top: 25%; /* Move higher up */
+  right: 5%; /* Move more to the left */
+  max-height: 35vh;
   /* Other styles */
 }
 
 .image-column img:nth-child(3) {
-  top: 650px; /* Move higher up */
-  right: 500px; /* Move more to the left */
-  height: 500px;
+  top: 55%; /* Move higher up */
+  right: 20%; /* Move more to the left */
+  max-height: 50vh;
   /* Other styles */
 }
 
@@ -641,15 +645,31 @@ h6 {
     margin-bottom: 675px; /* Adjust for smaller screens */
   }
 
-  .article-content4 {
-    width: 100%; /* Make full width on smaller screens */
-    padding-left: 20px; /* Adjust padding for smaller screens */
+  /* .article-content4 {
+    margin-top: 0%;
+    width: 100%; /* Make full width on smaller screens 
+    padding-left: 20px; /* Adjust padding for smaller screens 
+  } */
+
+  .image-column {
+    height: auto;
   }
 
   .image-column img {
     position: relative; /* Stack images vertically on smaller screens */
-    width: 100%; /* Make full width on smaller screens */
+    width: 90%; /* Make full width on smaller screens */
+    height: auto;
+    margin: 0 5%;
+    border-radius: 10%;
   }
+
+   .image-column img:nth-child(1), .image-column img:nth-child(2), .image-column img:nth-child(3) {
+    left: 0;
+    top: 0;
+    position: relative;
+    width: 90%;
+
+  } 
 
   .header-image4.centered {
     width: 100%; /* Make full width on smaller screens */
@@ -749,10 +769,18 @@ h6 {
 
   .article-content2 {
     top: 150vh;
-    width: 95%; 
-    margin: 0 0 0 0;
+    width: 80%; 
+    margin: 0 10% 0 10%;
+    padding: 0;
   }
 
+  .header-image3 {
+    display: block; /* Make sure the image is a block element */
+    margin: 0 auto; /* Center the image and add some margin below */
+    max-width: 80%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
   /* .header-image2 {
     width: 100%;
   } */
@@ -777,13 +805,13 @@ h6 {
   .article-content4 {
     width: 90%; 
     padding-left: 20px; 
-    margin-top: 60vh;
+    margin-top: 0vh;
   }
 
-  .image-column img {
+  /* .image-column img {
     position: relative;
     width: 100%; 
-  }
+  } */
 
   .header-image4.centered {
     width: 100%; 
@@ -808,13 +836,6 @@ h6 {
     flex-direction: column;
   }
 
-  .image-column img:nth-child(1), .image-column img:nth-child(2), .image-column img:nth-child(3) {
-    left: 1vh;
-    top: 0;
-    position: absolute;
-    width: 90%;
-
-  }
 /* 
   .image-column img:nth-child(2), .image-column img:nth-child(3) {
     left: 1vh;
@@ -829,7 +850,7 @@ h6 {
     margin-bottom: 10vh;
   }
 
-  .image-column {
+  /* .image-column {
     height: 0vh;
-  }
+  } */
 }
