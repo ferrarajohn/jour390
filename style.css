@@ -25,8 +25,17 @@ body, html {
   }
 
   a {
-    color: #7fc97f;
+    color: #579557;
   }  
+
+  a:hover {
+    cursor: pointer;
+
+  }
+
+  a:visited {
+    color: #194a19;
+  }
 
   .video-header {
     background-image: url('pics/header.JPG');
@@ -388,6 +397,7 @@ h6 {
   justify-content: center; /* Center items horizontally */
   background-color: #D8C16A; /* Set the background color to yellow */
   padding: 50px 10px; /* Add some padding around the content */
+  margin: 0px 30px;
 }
 
 .header-image3 {
