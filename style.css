@@ -23,7 +23,6 @@ body, html {
     font-family: "Lilita One", sans-serif;
   }
 
-
   .video-header {
     background-image: url('pics/header.JPG');
     background-size: cover;
@@ -216,15 +215,18 @@ h6 {
 }
 
 .header-image {
-  width: 40%; /* Adjust if you want a different width */
+  width: 50%;
+  left: 80vh;
+  position: absolute;
+  /* margin-bottom: 10px; */
   height: auto;
-  align-self: flex-end; /* Align the image to the right */
-  transform: rotate(20deg); /* Rotate the image a little */
+  align-self: flex-end;
+  transform: rotate(20deg);
 }
 .article-content {
   width: 35%;
   text-align: left;
-  margin-top: -220px;
+  margin-top: 40vh;
   margin-left: 200px;
 }
 
@@ -236,7 +238,7 @@ h6 {
 
 .first-image {
   top: -60px;
-  left: 760px;
+  left: 20vw;
   transform: rotate(5deg);
   z-index: 4; /* Ensures this image is on top */
   height: 800px;
@@ -244,17 +246,17 @@ h6 {
 
 .second-image {
   top: 30px;
-  left: 50px; /* Adjust for overlap */
+  left: -20vw; /* Adjust for overlap */
   transform: rotate(-3deg);
   z-index: 3;
   height: 800px;
 }
 
 .third-image {
-  top: 460px;
-  left: 1000px; /* Adjust for overlap */
+  top: 70vh;
+    left: 0vw;
   transform: rotate(5deg);
-  z-index: 5;
+  z-index: 7;
   height: 800px;
 }
 
@@ -263,6 +265,40 @@ h6 {
   left: 500px; /* Adjust for overlap */
   z-index: 6; /* Ensures this image is at the bottom */
   height: 800px;
+}
+
+
+.fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 .minus-quote {
@@ -274,9 +310,8 @@ h6 {
 }
 
 .article-content2 {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "neue-haas-grotesk-display", sans-serif;
   color: #000;
-  background-color: #fff;
   padding: 20px;
   /* border: 2px solid #000; */
   width: 45%;
@@ -369,11 +404,11 @@ h6 {
 }
 
 .image-overlay-container {
-  position: relative; /* This makes it the reference point for its absolutely positioned children */
-  width: 100%; /* Set to the width of the container or as needed */
-  height: auto; /* Adjust height as needed */
-  margin-top: 20px; /* Space from the preceding content */
-  margin-bottom: 1350px;
+  position: relative;
+    width: 60vw;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 150vh;
   
 }
 
@@ -399,7 +434,6 @@ h6 {
 .image-column img:nth-child(1) {
   top: -100px; /* Move higher up */
   right: 300px; /* Move more to the left */
-  width: auto;
   height: 400px;
   /* Other styles */
 }
@@ -407,7 +441,6 @@ h6 {
 .image-column img:nth-child(2) {
   top: 400px; /* Move higher up */
   right: 120px; /* Move more to the left */
-  width: auto;
   height: 350px;
   /* Other styles */
 }
@@ -415,15 +448,13 @@ h6 {
 .image-column img:nth-child(3) {
   top: 650px; /* Move higher up */
   right: 500px; /* Move more to the left */
-  width: auto;
   height: 500px;
   /* Other styles */
 }
 
 /* You may also need to adjust the height of the .image-column container if the images are larger */
 .image-column {
-  height: 1200px; /* Adjust based on your content and new image sizes */
-  /* Other styles */
+  height: 1200px; 
 }
 
 .header-image4.centered {
@@ -450,6 +481,19 @@ h6 {
     font-size: 16px; /* Adjust font size for smaller screens */
   }
 
+  .header-image {
+    left: 20vh;
+  }
+
+  .third-image {
+    top: 30vh;
+    left: -20vw;
+  }
+
+  .fourth-image {
+    left: 20vw;
+    top: 30vh;
+  }
   .video-header {
     height: 100vh;
     width: 100vw;
@@ -505,13 +549,9 @@ h6 {
     flex-direction: column; /* Stack children vertically on smaller screens */
   }
 
-  .dog-illustration, .header-image {
-    width: 100%; /* Make full width on smaller screens */
-  }
-
   .article-content {
     width: 100%; /* Make full width on smaller screens */
-    margin-top: 0;
+    margin-top: 15vh;
     margin-left: 0;
   }
 
@@ -521,12 +561,6 @@ h6 {
 
   .first-image, .second-image, .third-image, .fourth-image {
     height: 400px; /* Reduce size for smaller screens */
-  }
-
-  .article-content2 {
-    width: 100%; /* Make full width on smaller screens */
-    margin-top: 0;
-    margin-left: 0;
   }
 
   .header-image2 {
@@ -563,15 +597,12 @@ h6 {
   .header-image4.centered {
     width: 100%; /* Make full width on smaller screens */
   }
-}
-
-/* @media (max-width: 768px) {
   body, html {
     font-size: 16px;
   }
 
   .video-header {
-    height: 50%;
+    height: 100vh;
     width: 100vw;
   }
 
@@ -580,24 +611,35 @@ h6 {
     left: 5%; 
   }
 
-  .title, .subheader {
-    width: 100%;
+  .title {
+    width: 70vw;
+    left: -10vw;
+    top: -17vh;
+    position: absolute;
+  }
+
+  .subheader {
+    width: 100vw;
     left: 0;
-    top: 0;
+    top: -15vh;
+    position: absolute;
   }
 
   .subheader {
     font-size: 1.5em; 
-    top: 0;
+    top: 15vh;
     margin-left: 0;
   }
   .byline-date {
-    top: 0;
+    top: 30vh;
+    width: 97vw;
     margin-left: 0;
+    position: absolute;
+    font-size: 0.7em;
   }
 
-  #runningDog {
-    height: 150px; 
+  #runningDog, .header-gif {
+    display: none;
   }
 
   .body-text {
@@ -623,13 +665,9 @@ h6 {
     flex-direction: column; 
   }
 
-  .dog-illustration, .header-image {
-    width: 100%; 
-  }
-
   .article-content {
     width: 100%; 
-    margin-top: 0;
+    margin-top: 20vh;
     margin-left: 0;
   }
 
@@ -639,6 +677,16 @@ h6 {
 
   .first-image, .second-image, .third-image, .fourth-image {
     height: 400px; 
+  }
+
+  .third-image {
+    top: 40vh;
+    left: -13vw;
+  }
+
+  .fourth-image {
+    left: 20vw;
+    top: 30vh;
   }
 
   .article-content2 {
@@ -681,4 +729,10 @@ h6 {
   .header-image4.centered {
     width: 100%; 
   }
-  }} */
+  
+  .section2 {
+    height: 490vh;
+    position: absolute;
+  }
+}
+}

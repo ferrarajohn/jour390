@@ -111,3 +111,17 @@
   
 //     window.addEventListener('scroll', handleScroll);
 //   });
+
+document.addEventListener("DOMContentLoaded", function() {
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  });
+
+  document.querySelectorAll('.overlay-image').forEach(image => {
+    observer.observe(image);
+  });
+});
