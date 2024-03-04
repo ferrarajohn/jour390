@@ -16,6 +16,7 @@
   src: url('fonts/Riscada.ttf') format('truetype');
 }
 
+
 body, html {
     cursor: url('dogs/paw.svg'), default;
     height: 100%;
@@ -57,8 +58,8 @@ body, html {
   padding-top: 25px;
   position: absolute;
   left: 0px;
-  top: -400px;
-  margin-left: 700px;
+  top: -200px;
+  margin-left: 600px;
   width: 800px;
 }
 
@@ -89,7 +90,7 @@ body, html {
   position: absolute;
   left: 0px;
   top: 50px;
-  margin-top: -200px;
+  margin-top: -90px;
   margin-left: 600px;
 }
 
@@ -117,7 +118,7 @@ body, html {
 
 #runningDog {
   position: absolute;
-  bottom: 35px;
+  bottom: -5px;
   left: 0;
   width: auto;
   height: 30vh;
@@ -276,11 +277,11 @@ h6 {
 
 
 .fade-in {
-  animation: fadeIn ease 1s;
-  -webkit-animation: fadeIn ease 1s;
-  -moz-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
 }
 
 @keyframes fadeIn {
@@ -687,7 +688,7 @@ h6 {
     margin-left: 0;
   }
   .byline-date {
-    top: 62vh;
+    top: 50vh;
     width: 97vw;
     margin-left: 0;
     position: absolute;
@@ -774,8 +775,9 @@ h6 {
   } */
 
   .article-content4 {
-    width: 100%; 
+    width: 90%; 
     padding-left: 20px; 
+    margin-top: 60vh;
   }
 
   .image-column img {
@@ -787,10 +789,47 @@ h6 {
     width: 100%; 
   }
   
+  .header-gif {
+    width: 50vw;
+  }
+
+  .section3 {
+    margin-top: 15vh;
+  }
   /* .section2 {
     height: 490vh;
     position: absolute;
   } */
+  .minus-title {
+    flex-direction: column;
+  }
 
+  .minus-header {
+    flex-direction: column;
+  }
 
+  .image-column img:nth-child(1), .image-column img:nth-child(2), .image-column img:nth-child(3) {
+    left: 1vh;
+    top: 0;
+    position: absolute;
+    width: 90%;
+
+  }
+/* 
+  .image-column img:nth-child(2), .image-column img:nth-child(3) {
+    left: 1vh;
+    top: 230vh;
+    position: absolute;
+  } */
+
+  .minus-quote .header-gif img {
+    width: 50vw;
+    height: auto;
+    max-width: none;
+    margin-bottom: 10vh;
+  }
+
+  .image-column {
+    height: 0vh;
+  }
 }
