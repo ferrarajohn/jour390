@@ -28,14 +28,14 @@ body, html {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 100%;
+    max-width: 100%;
     position: relative;
     overflow: hidden;
 }
 
 .header-wrapper {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 10%; /* Adjust as needed */
     transform: translateY(-50%);
     text-align: left;
@@ -43,7 +43,7 @@ body, html {
 }
 
 .title {
-    width: 900px; /* Adjust as needed */
+    width: 800px; /* Adjust as needed */
     left: -100px;
     top: -500px;
     position: absolute;
@@ -59,6 +59,7 @@ body, html {
   left: 0px;
   top: -400px;
   margin-left: 700px;
+  width: 800px;
 }
 
 .subheader span {
@@ -73,7 +74,7 @@ body, html {
 
 .subheader span:nth-child(2) {
   font-size: 1em; /* Adjust the size as needed */
-  font-weight: bold; /* If you want this line to be bold */
+  /* font-weight: bold; If you want this line to be bold */
 }
 
 .subheader span:nth-child(3) {
@@ -88,6 +89,7 @@ body, html {
   position: absolute;
   left: 0px;
   top: 50px;
+  margin-top: -200px;
   margin-left: 600px;
 }
 
@@ -118,8 +120,13 @@ body, html {
   bottom: 35px;
   left: 0;
   width: auto;
-  height: 300px;
+  height: 30vh;
 }
+
+#waggingDog {
+  top: 79vh;
+}
+
   /* Add media queries for responsiveness */
   @media (max-width: 768px) {
     .header-title {
@@ -216,7 +223,7 @@ h6 {
 
 .header-image {
   width: 50%;
-  left: 80vh;
+  left: 90vh;
   position: absolute;
   /* margin-bottom: 10px; */
   height: auto;
@@ -224,10 +231,10 @@ h6 {
   transform: rotate(20deg);
 }
 .article-content {
-  width: 35%;
+  width: 30%;
   text-align: left;
   margin-top: 40vh;
-  margin-left: 200px;
+  margin-left: 15%;
 }
 
 .overlay-image {
@@ -237,34 +244,34 @@ h6 {
 }
 
 .first-image {
-  top: -60px;
-  left: 20vw;
+  top: -5vh;
+  left: 60%;
   transform: rotate(5deg);
   z-index: 4; /* Ensures this image is on top */
-  height: 800px;
+  width: 30%;
 }
 
 .second-image {
-  top: 30px;
-  left: -20vw; /* Adjust for overlap */
+  top: 5vh;
+  left: 30%; /* Adjust for overlap */
   transform: rotate(-3deg);
   z-index: 3;
-  height: 800px;
+  height: 80vh;
 }
 
 .third-image {
-  top: 70vh;
-    left: 0vw;
+  top: 50vh;
+  left: 10%;
   transform: rotate(5deg);
   z-index: 7;
-  height: 800px;
+  height: 80vh;
 }
 
 .fourth-image {
-  top: 590px; /* Adjust for overlap */
-  left: 500px; /* Adjust for overlap */
+  top: 60vh; /* Adjust for overlap */
+  left: 45%; /* Adjust for overlap */
   z-index: 6; /* Ensures this image is at the bottom */
-  height: 800px;
+  height: 80vh;
 }
 
 
@@ -324,7 +331,8 @@ h6 {
 .header-image2 {
   width: 60%; /* Adjust to fit the container */
   height: auto;
-  margin: 0 auto; /* Center the image */
+  left: 5%;
+  margin: 5% auto; /* Center the image */
   transform: none; /* Remove rotation if any */
 }
 
@@ -405,9 +413,9 @@ h6 {
 
 .image-overlay-container {
   position: relative;
-    width: 60vw;
+    width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 10vh;
     margin-bottom: 150vh;
   
 }
@@ -482,18 +490,18 @@ h6 {
   }
 
   .header-image {
-    left: 20vh;
+    left: 45%;
   }
 
-  .third-image {
+  /* .third-image {
     top: 30vh;
     left: -20vw;
-  }
+  } */
 
-  .fourth-image {
+  /* .fourth-image {
     left: 20vw;
     top: 30vh;
-  }
+  } */
   .video-header {
     height: 100vh;
     width: 100vw;
@@ -516,13 +524,19 @@ h6 {
     margin-left: 0;
   }
 
-  .byline-date {
+  /* .byline-date {
     top: 0;
     margin-left: 0;
-  }
+  } */
 
   #runningDog {
     height: 150px; /* Reduce size for smaller screens */
+  }
+
+  #waggingDog {
+    top: 97vh;
+    width: 125px;
+    height: auto;
   }
 
   .body-text {
@@ -551,8 +565,9 @@ h6 {
 
   .article-content {
     width: 100%; /* Make full width on smaller screens */
-    margin-top: 15vh;
+    margin-top: 220px;
     margin-left: 0;
+    margin-bottom: 5vh;
   }
 
   .overlay-image {
@@ -560,7 +575,40 @@ h6 {
   }
 
   .first-image, .second-image, .third-image, .fourth-image {
-    height: 400px; /* Reduce size for smaller screens */
+    width: 95%; /* Reduce size for smaller screens */
+    height: auto;
+
+  }
+
+  .first-image {
+    top: -5vh;
+    left: 0%;
+  }
+  .second-image {
+    top: 30vh;
+    left: 0%;
+  }
+
+  .third-image {
+    top: 70vh;
+    left: 0%;
+  }
+
+  .fourth-image {
+    top: 105vh;
+    left: 0%;
+  }
+
+  .section2 {
+    height: auto;
+  }
+
+  .header-gif {
+    top: 10%; /*could not figure out how to override the original, chatgpt told me to use !important */
+  }
+
+  .minus-quote {
+    display: block;
   }
 
   .header-image2 {
@@ -572,6 +620,11 @@ h6 {
     margin-top: 0;
   }
 
+  .statistic-image{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .pull-quote {
     width: 100%; /* Make full width on smaller screens */
   }
@@ -581,6 +634,9 @@ h6 {
   }
 
   .image-overlay-container {
+    width: 100%;
+    height: 100vh;
+    margin-top: 0px;
     margin-bottom: 675px; /* Adjust for smaller screens */
   }
 
@@ -601,10 +657,10 @@ h6 {
     font-size: 16px;
   }
 
-  .video-header {
+  /* .video-header {
     height: 100vh;
     width: 100vw;
-  }
+  } */
 
   .header-wrapper {
     top: 30%; 
@@ -631,16 +687,16 @@ h6 {
     margin-left: 0;
   }
   .byline-date {
-    top: 30vh;
+    top: 62vh;
     width: 97vw;
     margin-left: 0;
     position: absolute;
     font-size: 0.7em;
   }
 
-  #runningDog, .header-gif {
+  /* #runningDog, .header-gif {
     display: none;
-  }
+  } */
 
   .body-text {
     font-size: 16px; 
@@ -652,6 +708,7 @@ h6 {
 
   .image-container img {
     width: 100%; 
+  }
 
   .motion-image-container img {
     margin-bottom: -100px; 
@@ -665,21 +722,21 @@ h6 {
     flex-direction: column; 
   }
 
-  .article-content {
+  /* .article-content {
     width: 100%; 
     margin-top: 20vh;
     margin-left: 0;
-  }
+  } */
 
   .overlay-image {
     width: 100%; 
   }
 
-  .first-image, .second-image, .third-image, .fourth-image {
-    height: 400px; 
-  }
+  /* .first-image, .second-image, .third-image, .fourth-image {
+    width: 100%; 
+  } */
 
-  .third-image {
+  /* .third-image {
     top: 40vh;
     left: -13vw;
   }
@@ -687,34 +744,34 @@ h6 {
   .fourth-image {
     left: 20vw;
     top: 30vh;
-  }
+  } */
 
   .article-content2 {
-    width: 100%; 
-    margin-top: 0;
-    margin-left: 0;
+    top: 150vh;
+    width: 95%; 
+    margin: 0 0 0 0;
   }
 
-  .header-image2 {
+  /* .header-image2 {
     width: 100%;
-  }
+  } */
 
   .statistic-image-container {
     width: 100%; 
     margin-top: 0;
   }
 
-  .pull-quote {
+  /* .pull-quote {
     width: 100%;
-  }
+  } */
 
   .article-content3, .flourish-embed {
     max-width: 100%; 
   }
 
-  .image-overlay-container {
+  /* .image-overlay-container {
     margin-bottom: 675px; 
-  }
+  } */
 
   .article-content4 {
     width: 100%; 
@@ -730,9 +787,10 @@ h6 {
     width: 100%; 
   }
   
-  .section2 {
+  /* .section2 {
     height: 490vh;
     position: absolute;
-  }
-}
+  } */
+
+
 }
